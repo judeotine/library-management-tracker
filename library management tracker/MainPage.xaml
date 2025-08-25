@@ -21,32 +21,36 @@
                     Width="340"
                     Padding="20"
                     CornerRadius="12">
-            <TextBlock Text="Library Management Tracker"
+            <TextBlock Text="Library Book Tracker"
                        FontSize="21"
                        FontWeight="Bold"
                        HorizontalAlignment="Center"
                        Margin="0,0,0,15"/>
             <TextBox x:Name="txtTitle" 
                      Header="Book Title"
-                     Width="250" />
+                     Width="250"
+                     PlaceholderText="Book Title"/>
             <TextBox x:Name="txtAuthor" 
                      Header="Author Name"
-                     Width="250" />
+                     Width="250" 
+                     PlaceholderText="Author Name"/>
             <TextBox x:Name="txtYear" 
                      Header="Year Published"
-                     Width="250" />
+                     Width="250" 
+                     PlaceholderText="Year Published"/>
+            <TextBlock x:Name="txtBookCount"
+                       Text="Total Books: 0" 
+                       HorizontalAlignment="Center"/>
             <Button 
                 x:Name="btnAddBook"
                 Content="Add Book"
                 Click="btnAddBook_Click"
-                Width="120" />
-
-            <TextBlock x:Name="txtBookCount"
-                        Text="Total Books: 0" />
-            <Button Content="Options">
+                Width="120"
+                Background="Blue"/>
+            <Button Content="Library Menu" HorizontalAlignment="Center">
                 <Button.Flyout>
                     <MenuFlyout>
-                        <MenuFlyoutItem Text="Copy Info"
+                        <MenuFlyoutItem Text="Copy Book Info"
                                         Click="CopyInfo_Click"/>
                         <MenuFlyoutItem Text="Reset Form"
                                         Click="ResetForm_Click" />

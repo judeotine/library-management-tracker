@@ -32,12 +32,16 @@ namespace library_management_tracker
         {
            if (bookCount >= maxBooks)
             {
-                await ShowMessage("You've reached the maximum limit");
+                await ShowMessage("You've reached the maximum number of Books");
                 return;
             }
            bookCount++;
             txtBookCount.Text = $"Books Added: {bookCount}";
-            await ShowMessage("Book added successfully");
+            string info = $"Title: {txtTitle.Text}\n" +
+                $"Author: {txtAuthor.Text}\n" +
+                $"Year: {txtYear.Text}\n" +
+                $"Total Books: {bookCount}";
+            await ShowMessage(info);
         }
         private async void CopyInfo_Click(object sender, RoutedEventArgs e)
         {
@@ -55,14 +59,14 @@ namespace library_management_tracker
             txtYear.Text = "";
             bookCount = 0;
             txtBookCount.Text = $"Books Added: {bookCount}";
-            await ShowMessage("Form reset successfully");
+            await ShowMessage("You've reached the Maximum number of Books (25)");
         }
 
         private async System.Threading.Tasks.Task ShowMessage(string message)
         {
             ContentDialog dialog = new ContentDialog
             {
-                Title = "Library Management Tracker",
+                Title = "Library Book Tracker",
                 Content = message,
                 CloseButtonText = "OK"
             };
